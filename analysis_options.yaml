@@ -1,0 +1,58 @@
+linter:
+  rules:
+    - camel_case_types
+    - camel_case_extensions
+    - avoid_init_to_null
+    - avoid_returning_null_for_void
+    - avoid_returning_this
+    - avoid_unnecessary_containers
+    - avoid_empty_else
+    - avoid_relative_lib_imports
+    - unnecessary_const
+    - unnecessary_new
+    - unnecessary_lambdas
+    - prefer_initializing_formals
+    - prefer_function_declarations_over_variables
+    - prefer_void_to_null
+    - curly_braces_in_flow_control_structures
+    - cancel_subscriptions
+    - control_flow_in_finally
+    - empty_statements
+    - invariant_booleans
+    - directives_ordering
+    - empty_constructor_bodies
+    - no_duplicate_case_values
+    - annotate_overrides
+    - sized_box_for_whitespace
+    - unnecessary_null_in_if_null_operators
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart" 
+  errors:
+    camel_case_types: warning
+    camel_case_extensions: warning
+    avoid_init_to_null: warning
+    avoid_returning_null_for_void: warning
+    avoid_returning_this: warning
+    avoid_unnecessary_containers: warning
+    avoid_relative_lib_imports: warning
+    avoid_empty_else: warning
+    unnecessary_const: warning
+    unnecessary_new: warning
+    unnecessary_lambdas: warning
+    prefer_initializing_formals: warning
+    prefer_function_declarations_over_variables: warning
+    prefer_void_to_null: warning
+    prefer_if_null_operators: warning
+    curly_braces_in_flow_control_structures: warning
+    cancel_subscriptions: warning
+    control_flow_in_finally: warning
+    empty_statements: warning
+    invariant_booleans: warning
+    directives_ordering: warning
+    empty_constructor_bodies: warning
+    no_duplicate_case_values: warning
+    annotate_overrides: warning
+    sized_box_for_whitespace: ignore
+    unnecessary_null_in_if_null_operators: warning
