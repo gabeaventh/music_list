@@ -50,9 +50,6 @@ class _MusicListPageState extends State<MusicListPage>
               _processingState == ProcessingState.completed) {
             _i.stop();
           }
-          print("_playerState: $_playerState");
-          print("_processingState: $_processingState");
-          print("_isPlaying: $_isPlaying");
           return BlocBuilder(
             bloc: _i.bloc,
             builder: (context, state) {
