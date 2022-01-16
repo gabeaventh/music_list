@@ -83,7 +83,6 @@ class _MusicListPageState extends State<MusicListPage>
                     playingMusicId: _playingMusicId,
                     musicList: _listMusic ?? [],
                     isLoading: state is MusicListLoading,
-                    isPlaying: _i.player.playing,
                     animation: _animation,
                     playerState: pState,
                     onTap: _i.play,

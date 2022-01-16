@@ -65,9 +65,8 @@ class MusicListView extends StatelessWidget {
                             itemBuilder: (context, index) {
                               return MusicTile(
                                 music: musicList[index],
-                                isPlaying: playingMusicId ==
-                                        musicList[index].trackId &&
-                                    isPlaying,
+                                isPlaying:
+                                    playingMusicId == musicList[index].trackId,
                                 onTap: onTap,
                               );
                             },
