@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:music_player/core/logger/log.dart';
 
+/// class to log http request and response
 class DioLogger {
   static void onSend(String tag, RequestOptions options) {
     Log.info(tag,

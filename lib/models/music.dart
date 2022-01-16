@@ -1,8 +1,12 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'music.freezed.dart';
 part 'music.g.dart';
 
+/// Music class to store music data from ITunes API
+/// with the help of freezed_annotation and Freezed library
 @freezed
 class Music with _$Music {
   factory Music({

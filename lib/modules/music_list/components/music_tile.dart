@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/models/music.dart';
 
+/// [MusicTile] is a widget that displays a [Music] object.
+/// It is used in [MusicList] to display a list of [Music] objects.
+/// It is also used in [MusicPlayer] to display the currently playing [Music] object.
 class MusicTile extends StatelessWidget {
   final Music music;
   final void Function(Music) onTap;

@@ -4,6 +4,8 @@ import 'package:music_player/core/network/error/network_error.dart';
 import 'package:music_player/core/network/network_model.dart';
 
 class MusicListService extends CoreRestService {
+  /// fetch music list
+  /// by artist name
   Future<Either<NetworkModel, NetworkError>> searchByArtist(String artist) {
     return network.get(
       path: '/search',

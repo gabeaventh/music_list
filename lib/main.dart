@@ -4,6 +4,7 @@ import 'package:music_player/core/helper/bloc_observer.dart';
 import 'package:music_player/init.dart';
 
 void main() {
+  /// Override default [BlocObserver]
   BlocOverrides.runZoned(
     () {
       runApp(InitApp());

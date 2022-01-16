@@ -1,5 +1,6 @@
 part of 'music_list_bloc.dart';
 
+/// MusicListState is the state of the [MusicListBloc]
 @freezed
 class MusicListState with _$MusicListState {
   const factory MusicListState.initial() = MusicListInitial;

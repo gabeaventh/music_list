@@ -10,6 +10,8 @@ part 'music_list_bloc.freezed.dart';
 part 'music_list_event.dart';
 part 'music_list_state.dart';
 
+/// MusicListBloc class
+/// to manage music list state
 class MusicListBloc extends Bloc<MusicListEvent, MusicListState> {
   final MusicListService? _service;
   MusicListBloc({MusicListService? service})

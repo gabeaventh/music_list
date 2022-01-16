@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// [MusicSearchBar] is a widget that is used to search music.
+/// It is a [TextField] with a [IconButton] on the right side.
 class MusicSearchBar extends StatelessWidget {
   final String? hintText;
   final TextEditingController searchController;

@@ -6,6 +6,8 @@ import 'package:music_player/core/logger/log.dart';
 import 'package:music_player/core/network/network_interface.dart';
 import 'package:package_info/package_info.dart';
 
+/// [InitApp] is a class that is used to initialize the app.
+/// it is used to run necessary initialization code.
 class InitApp extends StatefulWidget {
   const InitApp({Key? key}) : super(key: key);
 

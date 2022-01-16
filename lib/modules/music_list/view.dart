@@ -53,6 +53,7 @@ class MusicListView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: [
+            /// Render [MusicTile] or [ShimmerTile] based on [isLoading]
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(12.0).copyWith(bottom: 0),
@@ -73,6 +74,10 @@ class MusicListView extends StatelessWidget {
                           ),
               ),
             ),
+
+            /// To Render Player Bar
+            /// [PlayerBar] will track the [playerState] and update the UI
+            /// accordingly
             SizeTransition(
               sizeFactor: animation,
               child: PlayerBar(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
+/// [MusicListShimmer] is a widget that shows a shimmer effect on the music list.
+/// It is used to show a loading effect while the music list is being fetched.
 class MusicListShimmer extends StatelessWidget {
   const MusicListShimmer({Key? key}) : super(key: key);
 

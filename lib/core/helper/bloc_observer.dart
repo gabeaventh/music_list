@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:music_player/core/logger/log.dart';
 
+/// this class to track Bloc state/event changes
 class BlocLogger extends BlocObserver {
   List<String> excludeBlocName;
 

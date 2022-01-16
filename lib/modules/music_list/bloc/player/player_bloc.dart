@@ -6,6 +6,8 @@ part 'player_bloc.freezed.dart';
 part 'player_event.dart';
 part 'player_state.dart';
 
+/// [MusicPlayerBloc] is a [Bloc] that handles the music player.
+/// It is used to play, pause, and skip songs.
 class MusicPlayerBloc extends Bloc<MusicPlayerEvent, MusicPlayerState> {
   MusicPlayerBloc() : super(MusicInitial()) {
     on<MusicPlayerStart>((event, emit) {

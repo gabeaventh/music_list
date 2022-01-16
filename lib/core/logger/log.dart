@@ -1,5 +1,6 @@
 import 'package:logging/logging.dart';
 
+/// App Logger
 class Log {
   static const String LOGGER_NAME = "Logger";
   static late Logger _instance;

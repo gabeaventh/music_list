@@ -16,8 +16,11 @@ class MusicListPage extends StatefulWidget {
 
 class _MusicListPageState extends State<MusicListPage>
     with SingleTickerProviderStateMixin {
+  /// initiate Animation controller and Animation for hidding and showing the player.
   late AnimationController _animationController;
   late Animation<double> _animation;
+
+  /// initiate [MusicListInitiator]
   late MusicListInitiator _i;
   @override
   void initState() {
@@ -26,6 +29,7 @@ class _MusicListPageState extends State<MusicListPage>
     super.initState();
   }
 
+  /// Prepare animation for hiding and showing the player.
   prepareAnimation() {
     _animationController = AnimationController(
       vsync: this,
@@ -39,7 +43,7 @@ class _MusicListPageState extends State<MusicListPage>
 
   @override
   Widget build(BuildContext context) {
-    print(_i.player.playing);
+    /// [StreamBuilder] to handle [AudioPlayer] state.
     return StreamBuilder<PlayerState>(
         stream: _i.player.playerStateStream,
         builder: (context, snapshot) {
@@ -50,6 +54,8 @@ class _MusicListPageState extends State<MusicListPage>
               _processingState == ProcessingState.completed) {
             _i.stop();
           }
+
+          /// [BlocBuilder] to handle [MusicListBloc] state.
           return BlocBuilder(
             bloc: _i.bloc,
             builder: (context, state) {
@@ -58,6 +64,8 @@ class _MusicListPageState extends State<MusicListPage>
               if (state is MusicListLoaded) {
                 _listMusic = state.loadedData?.results;
               }
+
+              /// [BlocConsumer] to listen and build when [MusicPlayerBloc] state changes.
               return BlocConsumer(
                 bloc: _i.playerBloc,
                 listener: (context, state) {
@@ -69,6 +77,9 @@ class _MusicListPageState extends State<MusicListPage>
                   }
                 },
                 builder: (context, MusicPlayerState pState) {
+                  /// map [_playingMusicId] to [MusicPlayerState]
+                  /// to get the playing music id.
+                  /// according to the [MusicPlayerState]
                   pState.maybeWhen(
                     playing: (music) {
                       _playingMusicId = music?.trackId;
@@ -84,6 +95,9 @@ class _MusicListPageState extends State<MusicListPage>
                   if (pState is MusicStopped) {
                     _playingMusicId = null;
                   }
+
+                  /// Render [MusicListView]
+                  /// then insert all [MusicListView] Constructor parameters.
                   return MusicListView(
                     controller: _i.searchController,
                     playingMusicId: _playingMusicId,

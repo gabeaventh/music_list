@@ -1,5 +1,6 @@
 part of 'player_bloc.dart';
 
+/// [MusicPLayerEvent] is the event of [MusicPlayerBloc]
 @freezed
 class MusicPlayerEvent with _$MusicPlayerEvent {
   const factory MusicPlayerEvent.start({Music? music}) = MusicPlayerStart;

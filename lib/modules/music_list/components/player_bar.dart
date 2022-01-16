@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:music_player/models/music.dart';
 import 'package:music_player/modules/music_list/bloc/player/player_bloc.dart';
 
+/// [PlayerBar] is the widget that contains the player controls.
+///
 class PlayerBar extends StatelessWidget {
   final MusicPlayerState musicPlayerState;
   final void Function(Music) onResume;
