@@ -69,9 +69,18 @@ class _MusicListPageState extends State<MusicListPage>
                   }
                 },
                 builder: (context, MusicPlayerState pState) {
-                  if (pState is MusicPlaying) {
-                    _playingMusicId = pState.music?.trackId;
-                  }
+                  pState.maybeWhen(
+                    playing: (music) {
+                      _playingMusicId = music?.trackId;
+                    },
+                    paused: (music) {
+                      _playingMusicId = music?.trackId;
+                    },
+                    orElse: () {
+                      _playingMusicId = null;
+                    },
+                  );
+
                   if (pState is MusicStopped) {
                     _playingMusicId = null;
                   }
