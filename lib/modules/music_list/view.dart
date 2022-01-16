@@ -18,6 +18,7 @@ class MusicListView extends StatelessWidget {
   final Function(Music) onResume;
   final VoidCallback onStop;
   final Function(Music) onPause;
+  final VoidCallback onSearch;
   const MusicListView({
     Key? key,
     required this.controller,
@@ -31,6 +32,7 @@ class MusicListView extends StatelessWidget {
     required this.onResume,
     required this.onStop,
     required this.onPause,
+    required this.onSearch,
   }) : super(key: key);
 
   @override
@@ -41,7 +43,9 @@ class MusicListView extends StatelessWidget {
           title: Padding(
             padding: const EdgeInsets.all(12.0),
             child: MusicSearchBar(
+              searchController: controller,
               hintText: "Search by Artist",
+              onSearch: onSearch,
             ),
           ),
         ),

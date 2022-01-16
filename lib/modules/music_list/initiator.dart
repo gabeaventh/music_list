@@ -27,7 +27,6 @@ class MusicListInitiator extends CoreInitiator {
   void init(BuildContext context) {
     _bloc = Get.find<MusicListBloc>();
     _playerBloc = Get.find<MusicPlayerBloc>();
-    _bloc.add(MusicListEvent.searchByArtist(artist: "twice"));
     _searchController = TextEditingController();
     _player = AudioPlayer();
   }
@@ -51,6 +50,10 @@ class MusicListInitiator extends CoreInitiator {
     _player.stop();
     prepareMusic(music.previewUrl ?? "");
     resume(music);
+  }
+
+  void searchSongByArtist() {
+    _bloc.add(SearchByArtist(artist: _searchController.text));
   }
 
   void stop() {

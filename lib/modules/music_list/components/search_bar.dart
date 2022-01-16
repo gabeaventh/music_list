@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 
 class MusicSearchBar extends StatelessWidget {
   final String? hintText;
+  final TextEditingController searchController;
+  final VoidCallback onSearch;
   const MusicSearchBar({
     Key? key,
     this.hintText = "Search...",
+    required this.searchController,
+    required this.onSearch,
   }) : super(key: key);
 
   @override
@@ -20,11 +24,10 @@ class MusicSearchBar extends StatelessWidget {
         padding: const EdgeInsets.only(left: 20),
         child: Center(
           child: TextField(
+            controller: searchController,
+            onEditingComplete: onSearch,
             decoration: InputDecoration(
-              suffixIcon: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.search),
-              ),
+              suffixIcon: Icon(Icons.search),
               hintText: hintText,
               border: InputBorder.none,
             ),
