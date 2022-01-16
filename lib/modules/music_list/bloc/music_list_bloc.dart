@@ -16,6 +16,7 @@ class MusicListBloc extends Bloc<MusicListEvent, MusicListState> {
       : service = Get.find<MusicListService>(),
         super(const MusicListInitial()) {
     on<SearchByArtist>((event, emit) async {
+      emit(MusicListState.loading());
       if (event.artist == null || event.artist!.isEmpty) {
         emit(const MusicListState.error());
       }
