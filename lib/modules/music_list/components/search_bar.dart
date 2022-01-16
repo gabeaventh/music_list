@@ -27,7 +27,10 @@ class MusicSearchBar extends StatelessWidget {
             controller: searchController,
             onEditingComplete: onSearch,
             decoration: InputDecoration(
-              suffixIcon: Icon(Icons.search),
+              suffixIcon: IconButton(
+                onPressed: onSearch,
+                icon: Icon(Icons.search),
+              ),
               hintText: hintText,
               border: InputBorder.none,
             ),
