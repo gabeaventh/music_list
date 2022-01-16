@@ -59,6 +59,7 @@ class PlayerBar extends StatelessWidget {
               child: Container(
                 height: 50,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     IconButton(
                       icon: mapIcon(),

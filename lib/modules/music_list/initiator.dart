@@ -4,10 +4,8 @@ import 'package:get/get.dart' hide Rx;
 import 'package:just_audio/just_audio.dart';
 import 'package:music_player/core/core_initiator.dart';
 import 'package:music_player/models/music.dart';
-import 'package:music_player/models/position_data.dart';
 import 'package:music_player/modules/music_list/bloc/music_list_bloc.dart';
 import 'package:music_player/modules/music_list/bloc/player/player_bloc.dart';
-import 'package:rxdart/rxdart.dart';
 
 class MusicListInitiator extends CoreInitiator {
   late MusicListBloc _bloc;
@@ -35,17 +33,7 @@ class MusicListInitiator extends CoreInitiator {
   MusicPlayerBloc get playerBloc => _playerBloc;
   TextEditingController get searchController => _searchController;
   AudioPlayer get player => _player;
-  Stream<PositionData> get positionStream =>
-      Rx.combineLatest3<Duration, Duration, Duration?, PositionData>(
-        _player.positionStream,
-        _player.bufferedPositionStream,
-        _player.durationStream,
-        (pos, buffer, duration) => PositionData(
-          pos,
-          buffer,
-          duration ?? Duration.zero,
-        ),
-      );
+
   void play(Music music) {
     _player.stop();
     prepareMusic(music.previewUrl ?? "");
