@@ -11,16 +11,16 @@ part 'music_list_event.dart';
 part 'music_list_state.dart';
 
 class MusicListBloc extends Bloc<MusicListEvent, MusicListState> {
-  final MusicListService? service;
-  MusicListBloc({BuildContext? context})
-      : service = Get.find<MusicListService>(),
+  final MusicListService? _service;
+  MusicListBloc({MusicListService? service})
+      : _service = service ?? Get.find<MusicListService>(),
         super(const MusicListInitial()) {
     on<SearchByArtist>((event, emit) async {
       emit(MusicListState.loading());
       if (event.artist == null || event.artist!.isEmpty) {
         emit(const MusicListState.error());
       }
-      await service?.searchByArtist(event.artist!).then((value) {
+      await _service?.searchByArtist(event.artist!).then((value) {
         emit(value.fold(
           (result) {
             if (result.response != null) {
